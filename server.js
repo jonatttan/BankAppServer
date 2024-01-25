@@ -3,6 +3,19 @@
  * Check out the two endpoints this back-end API provides in fastify.get and fastify.post below
  */
 
+const express = require("express");
+const app = express();
+
+app.use(express.json());
+
+app.get("api/accounts", (req, resp) => {
+  resp.json("")
+});
+
+
+
+// -----------
+
 const path = require("path");
 
 // Require the fastify framework and instantiate it
