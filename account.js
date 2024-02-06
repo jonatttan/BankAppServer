@@ -43,6 +43,10 @@ class Account {
     return app.accounts.find(account => account.name == name && account.accountType == type)
   }
   
+  getAccountById(accountId) {
+    return app.accounts.find(account => account.id == accountId)
+  }
+  
 }
   
 

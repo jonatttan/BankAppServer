@@ -44,7 +44,16 @@ app.post("/api/accounts", (req, resp) => {
 });
 
 app.post("/api/transfer", (req, resp) => {
+  console.log(req.body)
   
+  let accountFromId = req.body.accountFromId;
+  let accountToId = req.body.accountToId;
+  let amount = req.body.amount;
+  
+  let fromAccount = Account.getAccountById(accountFromId);
+  let toAccount = Account.getAccountById(accountToId);
+  
+  fromAccount.transfer(toAccount)
 });
 
 const listener = app.listen(process.env.PORT, function () {
