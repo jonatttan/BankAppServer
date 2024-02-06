@@ -27,7 +27,7 @@ class Account {
     }
     
     this.withdraw(amount)
-    toAccount.deposit()
+    toAccount.deposit(amount)
     completion(true)
   }
   
@@ -41,10 +41,6 @@ class Account {
   
   getAccountByNameAndType(name, type) {
     return app.accounts.find(account => account.name == name && account.accountType == type)
-  }
-  
-  getAccountById(accountId) {
-    return app.accounts.find(account => account.id == accountId)
   }
   
 }

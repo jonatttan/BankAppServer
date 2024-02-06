@@ -50,11 +50,21 @@ app.post("/api/transfer", (req, resp) => {
   let accountToId = req.body.accountToId;
   let amount = req.body.amount;
   
-  let fromAccount = Account.getAccountById(accountFromId);
-  let toAccount = Account.getAccountById(accountToId);
+  let fromAccount = getAccountById(accountFromId);
+  let toAccount = getAccountById(accountToId);
   
-  fromAccount.transfer(toAccount)
+  fromAccount.transfer(toAccount, amount, (transferred, error) => {
+    if(transferred) {
+      resp.json({success: true})
+    } else {
+      resp.json({success: false, error: error})
+    }
+  });
 });
+
+function getAccountById(accountId) {
+  return accounts.find(account => account.id == accountId)
+};
 
 const listener = app.listen(process.env.PORT, function () {
   console.log("Your app is listening on port " + listener.address().port);
