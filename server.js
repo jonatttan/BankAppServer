@@ -29,7 +29,18 @@ app.get("/api/accounts", (req, resp) => {
 
 app.post("/api/accounts", (req, resp) => {
   let name = req.body.name;
-  let accountType = req.body.accountType
+  let accountType = req.body.accountType;
+  let balance = req.body.balance;
+  
+  let account = new Account(name, accountType, balance);
+  account.save((newAccount, error) => {
+    if(newAccount) {
+      accounts.push(newAccount);
+      resp.json({success: true});
+    } else {
+      resp.json({ })
+    }
+  });
 });
 
 const listener = app.listen(process.env.PORT, function () {
