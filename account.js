@@ -11,17 +11,32 @@ class Account {
   }
   
   save(completion) {
-    const accountExists = this.getAccountByNameAndType(this.name, this.accountType)
-    if(!accountExists) {
+    const account = this.getAccountByNameAndType(this.name, this.accountType)
+    if(!account) {
       this.id = uuid()
       completion(this)
     } else {
-      completion(null, 'Account exists and has same type')
+      completion(null, 'Account exists and has same type.')
     }
   }
   
-  transfer(toAccount) {
+  transfer(toAccount, amount, completion) {
+    if((this.balance - amount) < 0) {
+      completion(false, 'Insufficient founds!')
+      return
+    }
     
+    this.withdraw(amount)
+    toAccount.deposit()
+    completion(true)
+  }
+  
+  withdraw(amount) {
+    this.balance -= amount
+  }
+  
+  deposit(amount) {
+    this.balance += amount
   }
   
   getAccountByNameAndType(name, type) {
