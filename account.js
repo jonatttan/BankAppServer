@@ -11,14 +11,24 @@ class Account {
   }
   
   save(completion) {
+    const accountExists = this.getAccountByNameAndType(this.name, this.accountType)
+    if(!accountExists) {
+      this.id = uuid()
+      completion(this)
+    } else {
+      completion(null, 'Account exists and has same type')
+    }
+  }
+  
+  transfer(toAccount) {
     
-    this.id = uuid()
-    completion(this)
+  }
+  
+  getAccountByNameAndType(name, type) {
+    return app.accounts.find(account => account.name == name && account.accountType == type)
   }
   
 }
-  getAccountByNameAndType(name, type) {
-    return app.accounts.find(account => account.name == name )
-  }
+  
 
 module.exports = Account;
