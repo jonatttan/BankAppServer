@@ -38,7 +38,7 @@ app.post("/api/accounts", (req, resp) => {
       accounts.push(newAccount);
       resp.json({success: true});
     } else {
-      resp.json({ })
+      resp.json({success: false, error})
     }
   });
 });

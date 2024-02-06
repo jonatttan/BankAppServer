@@ -11,10 +11,14 @@ class Account {
   }
   
   save(completion) {
+    
     this.id = uuid()
     completion(this)
   }
   
 }
+  getAccountByNameAndType(name, type) {
+    return app.accounts.find(account => account.name == name )
+  }
 
 module.exports = Account;
