@@ -5,17 +5,17 @@
 const express = require("express");
 const app = express();
 const Account = require("./account");
-const uuidForSamples = require('./uuidv4');
+// const uuidForSamples = require('./uuidv4');
 
 app.use(express.json());
 app.use(express.static("public"));
 
 
 let sampleCheckingAccount = new Account('Adao', 'checking', 22);
-sampleCheckingAccount.id = uuidForSamples();
+sampleCheckingAccount.id = 'ed5736e7-7fe9-453b-95dc-5f59565d25ac'; // uuidForSamples();
 
 let sampleSavinggAccount = new Account('Eva', 'saving', 33);
-sampleSavinggAccount.id = uuidForSamples();
+sampleSavinggAccount.id = 'ce3dd3a5-70d5-459e-b6b7-49e0375b1650'; // uuidForSamples();
 
 
 module.exports.accounts = [sampleCheckingAccount, sampleSavinggAccount];
@@ -38,7 +38,7 @@ app.post("/api/accounts", (req, resp) => {
       accounts.push(newAccount);
       resp.json({success: true});
     } else {
-      resp.json({success: false, error})
+      resp.json({success: false, error: error})
     }
   });
 });

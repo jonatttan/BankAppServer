@@ -10,6 +10,7 @@ class Account {
     this.balance = balance
   }
   
+  
   save(completion) {
     const account = this.getAccountByNameAndType(this.name, this.accountType)
     if(!account) {
@@ -19,6 +20,7 @@ class Account {
       completion(null, 'Account exists and has same type.')
     }
   }
+  
   
   transfer(toAccount, amount, completion) {
     if((this.balance - amount) < 0) {
