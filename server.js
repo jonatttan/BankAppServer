@@ -5,18 +5,31 @@
 const express = require("express");
 const app = express();
 const Account = require("./account");
+const uuidForSamples = require('./uuidv4');
 
 app.use(express.json());
 app.use(express.static("public"));
 
+
 let sampleCheckingAccount = new Account('Adao', 'checking', 22);
+sampleCheckingAccount.id = uuidForSamples();
+
 let sampleSavinggAccount = new Account('Eva', 'saving', 33);
+sampleSavinggAccount.id = uuidForSamples();
+
 
 module.exports.accounts = [sampleCheckingAccount, sampleSavinggAccount];
 let accounts = module.exports.accounts;
 
+
 app.get("/api/accounts", (req, resp) => {
-  resp.json("test");
+  resp.json(accounts);
+});
+
+
+app.post("/api/accounts", (req, resp) => {
+  let name = req.body.name;
+  let accountType = req.body.accountType
 });
 
 const listener = app.listen(process.env.PORT, function () {
