@@ -1,7 +1,7 @@
 # Hello Node!
 
-This project was developed in JavaScript language, using Express.js framework, runing in the Node.js platform
-_Last updated: 14 August 2023_
+This project was developed in JavaScript language, using Express.js framework, runing in the Node.js platform.
+_Last updated: 11 February 2023_
 
 ## Prerequisites
 
