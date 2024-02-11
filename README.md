@@ -1,29 +1,17 @@
 # Hello Node!
 
-This project was developed in JavaScript language, using Express.js framework, runing in the Node.js platform.
+This project was developed in JavaScript language, using Express.js framework, running in the Node.js platform.
 _Last updated: 11 February 2023_
-
-## Prerequisites
-
-You'll get best use out of this project if you're familiar with basic JavaScript. If you've written JavaScript for client-side web pages this is a little different because it uses server-side JS, but the syntax is the same!
 
 ## What's in this project?
 
-← `README.md`: That’s this file, where you can tell people what your cool website does and how you built it.
+← `README.md`: That’s this file, how you built it.
 
-← `public/style.css`: The styling rules for the pages in your site.
+← `server.js`: The **Node.js** server script for your business logic. The JavaScript defines the endpoints.
 
-← `server.js`: The **Node.js** server script for your new site. The JavaScript defines the endpoints in the site back-end, one to return the homepage and one to update with the submitted color. Each one sends data to a Handlebars template which builds these parameter values into the web page the visitor sees.
+← `server.js`: 
 
 ← `package.json`: The NPM packages for your project's dependencies.
-
-← `src/`: This folder holds the site template along with some basic data files.
-
-← `src/pages/index.hbs`: This is the main page template for your site. The template receives parameters from the server script, which it includes in the page HTML. The page sends the user submitted color value in the body of a request, or as a query parameter to choose a random color.
-
-← `src/colors.json`: A collection of CSS color names. We use this in the server script to pick a random color, and to match searches against color names.
-
-← `src/seo.json`: When you're ready to share your new site or add a custom domain, change SEO/meta settings in here.
 
 ## Try this next 🏗️
 
