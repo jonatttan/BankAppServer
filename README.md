@@ -1,7 +1,7 @@
 # Hello Node!
 
 This project was developed in JavaScript language, using Express.js framework, running in the Node.js platform.
-_Last updated: 11 February 2023_
+_Last updated: 11 February 2024_
 
 ## What's in this project?
 
@@ -15,4 +15,6 @@ _Last updated: 11 February 2023_
 
 ← `package.json`: The NPM packages for your project's dependencies.
 
-## App 
+## Application this was created for...
+
+BankApp,a an application created for SwiftUI practices. This is an app to consult and create accounts with name, type and value, in addition, make transfers between accounts.
