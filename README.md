@@ -18,3 +18,7 @@ _Last updated: 11 February 2024_
 ## Application this was created for...
 
 [BankApp](https://github.com/jonatttan/BankApp), an application created for SwiftUI practices. This is an app to consult and create accounts with name, type and value, in addition, make transfers between accounts.
+
+## Interacting with the API through Insomnia:
+
+You can interact with the API using Insomnia application, just download [this](Insomnia-BankAppServer.json) file and import to the Insomnia.
